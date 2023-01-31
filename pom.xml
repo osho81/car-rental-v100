@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.osho</groupId>
-    <artifactId>car-rental-v2</artifactId>
+    <artifactId>car-rental-v100</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>car-rental-v2</name>
-    <description>School project java spring rest-api security</description>
+    <name>car-rental-v100</name>
+    <description>Backend Car Rental System for React/JS frontend</description>
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.4</spring-cloud.version>
@@ -61,14 +61,14 @@
 <!--            <scope>runtime</scope>-->
 <!--        </dependency>-->
         <!--		Deps hereunder, added for keycloak/spring sec implementation: -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-spring-boot-starter</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.keycloak</groupId>-->
+<!--            <artifactId>keycloak-spring-boot-starter</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
     <dependencyManagement>
         <dependencies>

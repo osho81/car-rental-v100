@@ -1,6 +1,6 @@
 package com.osho.twCarRental;
 
-import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
+//import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -10,10 +10,10 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableEurekaClient
 @SpringBootApplication
-public class WigellCarRentalApplication {
+public class CarRentalApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WigellCarRentalApplication.class, args);
+        SpringApplication.run(CarRentalApplication.class, args);
     }
 
     @Bean
@@ -22,9 +22,9 @@ public class WigellCarRentalApplication {
         return new RestTemplate();
     }
 
-    @Bean public KeycloakSpringBootConfigResolver keycloakConfigResolver() {
-        return new KeycloakSpringBootConfigResolver();
-    }
+//    @Bean public KeycloakSpringBootConfigResolver keycloakConfigResolver() {
+//        return new KeycloakSpringBootConfigResolver();
+//    }
 
 
 }

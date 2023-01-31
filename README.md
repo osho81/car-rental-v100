@@ -1,22 +1,24 @@
 ## Car Rental Application
 
+Note: car-rental-v1, car-rental-v2 or this car-rental-v100 are almost identical, but:
+- v1 is mainly for microservice approach, 
+- v2 is for plain js frontend, while this
+- v100 is for react/js frontend.
+
 ### Intro on overall car rental project
 
-This car-rental-v2 is mainly a rest api project built on Java/SpringBoot.
+This car-rental-v100 is mainly a rest api project built on Java/SpringBoot.
 From the admin-web website, registered administrators/employees can retrieve, display and edit data from the
-car-rental-v2 rest api endpoints and its connected database.
+car-rental-v100 rest api endpoints and its connected database.
 From the customer-web website, enables the similar functions for customers (non-administrators). Different access rights
 etc. will be described hereafter.
 
-Note: car-rental-v1 is almost identical to this car-rental-v2, but the latter is with optional microservices only
-and used in the fullstack project)
-
 #### All projects belonging to the FULLSTACK car rental project can be found here:
 
-- [car-rental-v2 (this backend rest api project)](https://gitlab.com/car-rental-fullstack/car-rental-v2)
-- [admin-web (frontend js project)](https://gitlab.com/car-rental-fullstack/admin-web)
-- [customer-web (corresponding webpage for customers)](https://gitlab.com/car-rental-fullstack/customer-web)
-- Or see all related projects in the [GitLab project-group](https://gitlab.com/car-rental-fullstack)
+- [car-rental-v100 (this backend rest api project)](LINK SOON)
+- [admin-web (this frontend React/js project)](LINK SOON)
+- [customer-web (corresponding webpage for customers)](LINK SOON)
+- Or see all related projects in the [GitLab project-group](LINK SOON)
 
 ##### Corporate styleguide used for these projects:
 
@@ -45,19 +47,19 @@ database.
 
 #### H2 in memory only
 
-- Enable spring.datasource.url=jdbc:h2:mem:twrental in application.properties file
+- Enable spring.datasource.url=jdbc:h2:mem:carrental in application.properties file
 - (Unconnect or ignore eventual intelliJ connected H2 db)
 - If there is need for more mockdata records, copy sql statements from the data.sql file and run in the H2 browser
   console.
 
 #### H2 approach for H2 console & intelliJ db connect
 
-- Enable #spring.datasource.url=jdbc:h2:file:/data/twrental;AUTO_SERVER=TRUE in application.properties file
+- Enable #spring.datasource.url=jdbc:h2:file:/data/carrental;AUTO_SERVER=TRUE in application.properties file
 - (Optionally connect H2 db to intelliJ)
-- If there is need for more mockdata records, execute the whole of part of the data.sql file. 
-  - No customized schemas are used. 
-  - If required, select TWRENTAL.PUBLIC as target data source/schema in data.sql run configurations. 
-  - Alternatively, copy sql statements from the data.sql file and run in the H2 browser console.
+- If there is need for more mockdata records, execute the whole of part of the data.sql file.
+    - No customized schemas are used.
+    - If required, select CARRENTAL.PUBLIC as target data source/schema in data.sql run configurations.
+    - Alternatively, copy sql statements from the data.sql file and run in the H2 browser console.
 
 To see H2 data in browser console (http://localhost:9090/h2-console), be sure to select the correct JDBC url to log in
 to the console (see url in spring.datasource.url in application.properties file).

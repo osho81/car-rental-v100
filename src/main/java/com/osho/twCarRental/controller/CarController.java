@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/v1")
+@CrossOrigin(origins = "http://localhost:3000") // Temporary cors solution during dev
 public class CarController {
 
     @Autowired
