@@ -16,6 +16,8 @@
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.4</spring-cloud.version>
+<!--        Added 230207 for cloud app engine: -->
+        <spring-cloud-gcp.version>4.0.0</spring-cloud-gcp.version>
     </properties>
     <dependencies>
         <dependency>
@@ -49,17 +51,35 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <!--		MySql removed, H2 added for car-rental-v2: -->
+
+        <!--		Without MySql, when using H2: -->
 <!--        <dependency>-->
 <!--            <groupId>com.h2database</groupId>-->
 <!--            <artifactId>h2</artifactId>-->
 <!--&lt;!&ndash;            <scope>runtime</scope>&ndash;&gt;-->
 <!--        </dependency>-->
+
+<!--        MYSQL without cloud: -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <!--        MYSQL in cloud (added 230207): -->
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>spring-cloud-gcp-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>spring-cloud-gcp-starter-storage</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
+        </dependency>
+
         <!--		Deps hereunder, added for keycloak/spring sec implementation: -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -70,6 +90,7 @@
             <artifactId>keycloak-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -86,14 +107,30 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+<!--            Added 230207 for Google cloud app engine: -->
+            <dependency>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>spring-cloud-gcp-dependencies</artifactId>
+                <version>${spring-cloud-gcp.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <build>
         <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+
+            <!--            Added 230207 for Google cloud app engine: -->
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>appengine-maven-plugin</artifactId>
+                <version>1.3.2</version>
             </plugin>
         </plugins>
     </build>
