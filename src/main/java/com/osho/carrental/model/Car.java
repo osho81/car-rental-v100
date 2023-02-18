@@ -10,7 +10,7 @@ public class Car {
 
     // Changed type from string to type 221224
     public enum Type {
-        SEDAN, // 0; use index for postman, frontend, data.sql etc
+        SEDAN, // 0; use index in postman, frontend, data.sql etc
         MINI, // 1
         SUV, // 2
         CAB, // 3
