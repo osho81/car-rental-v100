@@ -53,16 +53,9 @@ database.
   console.
 
 #### H2 approach for H2 console & intelliJ db connect
-
-- Enable #spring.datasource.url=jdbc:h2:file:/data/carrental;AUTO_SERVER=TRUE in application.properties file
-- (Optionally connect H2 db to intelliJ)
-- If there is need for more mockdata records, execute the whole of part of the data.sql file.
-    - No customized schemas are used.
-    - If required, select CARRENTAL.PUBLIC as target data source/schema in data.sql run configurations.
-    - Alternatively, copy sql statements from the data.sql file and run in the H2 browser console.
-
-To see H2 data in browser console (http://localhost:9090/h2-console), be sure to select the correct JDBC url to log in
-to the console (see url in spring.datasource.url in application.properties file).
+- Make sure the mysql configurations are used in application.properties
+- At start, mockdata is created
+  - If there is need for more mockdata records, execute the whole of part of the data.sql file.
 
 ### Techs & languages used
 
@@ -74,17 +67,14 @@ to the console (see url in spring.datasource.url in application.properties file)
 ### Security related matters for the fullstack project
 
 For login and access management, [Keycloak (Quarkus distribution)](https://www.keycloak.org/downloads) is employed. For
-the frontend (customer-web & admin-web) a Javascript adapter from the same source have been included in the project.
-Brief
-configuration description:
+the frontend, a Javascript adapter from the same source have been included in the project.
+Brief configuration description:
 
 - Realm name: car-rental-realm
-- Client id: car-rental-v2
-- Valid post logout redirect URIs, relevant for e.g. VS Code live server:
-    - http://localhost:9090/api/v1/*
-    - http://127.0.0.1:5500/*
-    - http://127.0.0.1:5501/* (in case use customer & admin web simultanous)
-    - During development * as uri and web origin uri is sufficient.
+- Client id: car-rental-v100
+- Valid Redirect URIs & Valid post logout redirect URIs:
+    - http://localhost:3000/*
+    - During development, a wildcard (*) as web origin uri is sufficient.
 - Roles: admin & user
 
 Authorization is validated using keycloak Bearer access token in the http requests.
