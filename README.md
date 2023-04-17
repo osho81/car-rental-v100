@@ -67,7 +67,7 @@ to the console (see url in spring.datasource.url in application.properties file)
 ### Techs & languages used
 
 - Java, Spring, Springboot, Rest-api
-- H2 (while MySQl was used in car-rental-v1)
+- MySQl (while H2 was used in car-rental-v2)
 - Keycloak & spring security
 - HTTP request to external api
 
