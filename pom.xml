@@ -92,14 +92,14 @@
                 <scope>import</scope>
             </dependency>
 
-<!--            Added 230207 for Google cloud app engine: -->
-            <dependency>
-                <groupId>com.google.cloud</groupId>
-                <artifactId>spring-cloud-gcp-dependencies</artifactId>
-                <version>${spring-cloud-gcp.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+<!--            Added 230207 for Google cloud app engine (but not using since 230418) -->
+<!--            <dependency>-->
+<!--                <groupId>com.google.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-gcp-dependencies</artifactId>-->
+<!--                <version>${spring-cloud-gcp.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
