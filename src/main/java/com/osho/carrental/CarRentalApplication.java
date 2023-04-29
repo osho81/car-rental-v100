@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 
-// Comment to test PR, for automatic analysis by SAST tools
+// Comment to test PR, for automatic analysis by snyk/sonarcloud
 
 @EnableEurekaClient
 @SpringBootApplication
