@@ -14,8 +14,8 @@ jobs:
         with:
           fetch-depth: 0
           args:
-            - Dsonar.projectKey=osho81_car-rental-v100
-            - Dsonar.organization=osho81sonar
+            -Dsonar.projectKey=osho81_car-rental-v100
+            -Dsonar.organization=osho81sonar
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@main
         env:
