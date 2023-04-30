@@ -13,14 +13,14 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          args:
+            - Dsonar.projectKey=osho81_car-rental-v100
+            - Dsonar.organization=osho81sonar
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        args:
-          - Dsonar.projectKey=osho81_car-rental-v100
-          - Dsonar.organization=osho81sonar
 
 
 
