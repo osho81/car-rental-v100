@@ -17,6 +17,7 @@ jobs:
         image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: carrental
           MYSQL_ALLOW_EMPTY_PASSWORD: 1
         ports:
           - 33306:3306
