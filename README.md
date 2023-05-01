@@ -15,10 +15,9 @@ etc. will be described hereafter.
 
 #### All projects belonging to the FULLSTACK car rental project can be found here:
 
-- [car-rental-v100 (this backend rest api project)](LINK SOON)
-- [admin-web (this frontend React/js project)](LINK SOON)
-- [customer-web (corresponding webpage for customers)](LINK SOON)
-- Or see all related projects in the [GitLab project-group](LINK SOON)
+- [car-rental-v100 (this backend rest api project)](https://github.com/osho81/car-rental-v100)
+- [admin-web (its frontend React/js project)](https://github.com/osho81/car-admin-react)
+- Customer-web is still only available in plain/vanilla Javascript; see it and other related project in [GitLab project-group](https://gitlab.com/car-rental-fullstack)
 
 ##### Corporate styleguide used for these projects:
 
