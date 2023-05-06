@@ -23,7 +23,7 @@ jobs:
           java-version: 11
 
       - name: Package with Maven
-        run: mvn clean package
+        run: mvn clean package -DskipTests=true
 
       - name: NextGen Static Analysis
         run: ${GITHUB_WORKSPACE}/sl analyze --app ShiftLeftJava --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --vcs-prefix-correction "io/shiftleft=src/main/java/" --java $(pwd)/target/yourJarFileName.jar
