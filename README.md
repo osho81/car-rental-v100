@@ -89,6 +89,11 @@ Authorization is validated using keycloak Bearer access token in the http reques
 - Users with assigned "user" role can access the endpoints described for the customers
 - The role restrictions can be seen in SecurityConfig.java (in its antMatchers)
 
+- Start keycloak server locally; add connection url:
+  - keycloak.auth-server-url=http://localhost:8080
+- Start keycloak containerized, add instead this url:
+  - keycloak.auth-server-url=http://PrivateIP:8080 
+
 ### Purpose/Motivation
 
 To test and improve skills in Springboot, security implementation, and microservice architecture.
