@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 import static java.time.temporal.ChronoUnit.DAYS;
 
-// Mock data to ease the presentation to product owner & customer
+// Mock data to ease the presentation to product owner & customers
 
 @Configuration
 public class MockData {
