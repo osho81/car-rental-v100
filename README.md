@@ -52,9 +52,16 @@ database.
   console.
 
 #### H2 approach for H2 console & intelliJ db connect
-- Make sure the mysql configurations are used in application.properties
+- Use this connection instead: 
+  - spring.datasource.url=jdbc:h2:file:/data/carrental;AUTO_SERVER=TRUE
+
+#### MYSQL instead of H2
+- Make sure the mysql configurations are used in application.properties, e.g.:
+  - spring.datasource.url=jdbc:mysql://localhost:3306/dbName
+  - spring.datasource.url=jdbc:mysql://PrivateIp/dbName (if containerized)
+  - Additional configs, such as ddl-auto, db credentials etc.
 - At start, mockdata is created
-  - If there is need for more mockdata records, execute the whole of part of the data.sql file.
+  - If there is need for more mockdata records, execute the whole or part of the data.sql file.
 
 ### Techs & languages used
 
