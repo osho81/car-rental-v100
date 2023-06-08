@@ -23,6 +23,12 @@ public class CarController {
         return new ResponseEntity<List<Car>>(carService.getAllCars(), HttpStatus.OK);
     }
 
+    // Added 230608
+    @GetMapping("/car/{id}") // USER OR ADMIN ROLE REQUIRED
+    public ResponseEntity<Car> getCarById(@PathVariable String id) {
+        return new ResponseEntity<Car>(carService.getCarById(id), HttpStatus.OK);
+    }
+
     // Requirement: "Lägga till fordon POST /api/v1/addcar"
     @PostMapping("/addcar") // ADMIN ROLE REQUIRED
     public ResponseEntity<Car> addCar(@RequestBody Car car) {

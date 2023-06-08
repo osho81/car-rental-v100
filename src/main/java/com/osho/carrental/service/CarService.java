@@ -6,6 +6,7 @@ import com.osho.carrental.repository.CarRepository;
 import com.osho.carrental.repository.OrderRepository;
 import com.osho.carrental.service.repository.CarServiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
@@ -23,6 +24,20 @@ public class CarService implements CarServiceRepository {
     @Override
     public List<Car> getAllCars() {
         return carRepository.findAll();
+    }
+
+    // Added 230608
+    public Car getCarById(String id) {
+        Car carToReturn;
+        Optional<Car> foundById = carRepository.findById(Integer.valueOf(id));
+        if (foundById.isEmpty()) {
+            throw new RuntimeException("Car with id " + id
+                    + " or reg. nr " + id + " not found");
+        } else {
+            carToReturn = foundById.get();
+        }
+        System.out.println(carToReturn);
+        return carToReturn;
     }
 
     @Override
