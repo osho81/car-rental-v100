@@ -81,11 +81,15 @@ public class ExchangeService implements ExchangeServiceRepository {
                 .addHeader("apikey", APIKEY)
                 .build();
 
-        Response response = client.newCall(request).execute();
-        JSONObject jo = new JSONObject(response.body().string()); // string(), NOT toString()
+        // Disable when api key rights are exceeded for current month
+//        Response response = client.newCall(request).execute();
+//        JSONObject jo = new JSONObject(response.body().string()); // string(), NOT toString()
 
         // Pass in returned response values into exchange object
-        Exchange exchangedReturned = new Exchange(amount, fromCurrency, toCurrency, jo.getDouble("result"));
+//        Exchange exchangedReturned = new Exchange(amount, fromCurrency, toCurrency, jo.getDouble("result"));
+        // Return fictive api exchange results when api key rights are exceeded for month month:
+        Exchange exchangedReturned = new Exchange(amount, fromCurrency, toCurrency, (amount*11));
+
         return exchangedReturned; // Return to calling service method
 
     }

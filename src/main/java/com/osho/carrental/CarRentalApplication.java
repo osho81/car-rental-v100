@@ -1,6 +1,6 @@
 package com.osho.carrental;
 
-//import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
+import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -24,9 +24,9 @@ public class CarRentalApplication {
 
 
     // Uncomment when use keycloak:
-//    @Bean public KeycloakSpringBootConfigResolver keycloakConfigResolver() {
-//        return new KeycloakSpringBootConfigResolver();
-//    }
+    @Bean public KeycloakSpringBootConfigResolver keycloakConfigResolver() {
+        return new KeycloakSpringBootConfigResolver();
+    }
 
 
 }

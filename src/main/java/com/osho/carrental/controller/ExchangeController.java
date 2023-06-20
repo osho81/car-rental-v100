@@ -11,6 +11,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping(path = "/api/v1")
+@CrossOrigin(origins = "http://localhost:3000") // Temporary cors solution during dev
 public class ExchangeController {
 
     @Autowired
